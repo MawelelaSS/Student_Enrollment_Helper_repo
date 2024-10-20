@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Results</h1>
+    </header>
+    <main>
+        <section id="student-details">
+            <h2>Student Details</h2>
+            <p>Name: {{ name }}</p>
+            <p>Email: {{ email }}</p>
+            <p>Matric Marks: {{ matricMarks }}</p>
+            <p>Interests: {{ interests }}</p>
+        </section>
+        <section id="recommended-universities">
+            <h2>Recommended Universities</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>University Name</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#universities}}
+                    <tr>
+                        <td>{{ name }}</td>
+                        <td>{{ location }}</td>
+                    </tr>
+                    {{/universities}}
+                </tbody>
+            </table>
+        </section>
+        <section id="recommended-courses">
+            <h2>Recommended Courses</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>University</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#courses}}
+                    <tr>
+                        <td>{{ name }}</td>
+                        <td>{{ university }}</td>
+                        <td>{{ description }}</td>
+                    </tr>
+                    {{/courses}}
+                </tbody>
+            </table>
+        </section>
+        <section id="course-details">
+            <h2>Course Details</h2>
+            {{#courses}}
+            <h3>{{ name }}</h3>
+            <p>Duration: {{ duration }}</p>
+            <p>Fees: {{ fees }}</p>
+            <p>Requirements: {{ requirements }}</p>
+            {{/courses}}
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
